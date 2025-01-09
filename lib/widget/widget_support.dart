@@ -9,10 +9,24 @@ class AppWidget{
         fontWeight: FontWeight.bold,
         fontFamily: 'Poppins' );
   }
-  static TextStyle HeadlineTextFieldStyle(){
+  static TextStyle HeadLineTextFieldStyle(){
     return TextStyle(
         color: Colors.blue,
-        fontSize: 20,
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Poppins' );
+  }
+  static TextStyle LightTextFieldStyle(){
+    return TextStyle(
+        color: Colors.black38,
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Poppins' );
+  }
+    static TextStyle semiBoldTextFieldStyle(){
+    return TextStyle(
+        color: Colors.blue,
+        fontSize: 15,
         fontWeight: FontWeight.bold,
         fontFamily: 'Poppins' );
   }

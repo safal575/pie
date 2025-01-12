@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pie/widget/widget_support.dart';
+import 'package:pie/pages/details.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -50,26 +51,31 @@ class _HomeState extends State<Home> {
               scrollDirection: Axis.horizontal,
               child:Row(
                 children: [
-                  Container(
-                    margin: EdgeInsets.all(4),
-                    child:
-                      Material(
-                      elevation: 5,
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        padding: EdgeInsets.all(14),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset("images/salad.jpg", width: 200, height: 100, fit: BoxFit.cover),
-                            Text("Veggie Taco Hash", style: AppWidget.semiBoldTextFieldStyle(),),
-                            Text("Fresh and Healthy", style: AppWidget.LightTextFieldStyle(),),
-                            SizedBox(height: 5,),
-                            Text("\$25", style: AppWidget.semiBoldTextFieldStyle(),)
-                          ]
-                        ),
-                      )
-                   ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Details()));
+                    },
+                    child: Container(
+                      margin: EdgeInsets.all(4),
+                      child:
+                        Material(
+                        elevation: 5,
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          padding: EdgeInsets.all(14),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset("images/salad.jpg", width: 200, height: 100, fit: BoxFit.cover),
+                              Text("Veggie Taco Hash", style: AppWidget.semiBoldTextFieldStyle(),),
+                              Text("Fresh and Healthy", style: AppWidget.LightTextFieldStyle(),),
+                              SizedBox(height: 5,),
+                              Text("\$25", style: AppWidget.semiBoldTextFieldStyle(),)
+                            ]
+                          ),
+                        )
+                     ),
+                    ),
                   ),
                   SizedBox(width: 10),
                   Container(
@@ -97,6 +103,9 @@ class _HomeState extends State<Home> {
                 ],
               )
             ),
+            Container(
+              
+            ),
             SizedBox(height: 30,),
             Material(
               elevation: 5,
@@ -106,7 +115,7 @@ class _HomeState extends State<Home> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.asset("images/pizza.jpg", height: 150, width:150, fit: BoxFit.cover),
+                    Image.asset("images/pizza.jpg", height: 100, width:150, fit: BoxFit.cover),
                     SizedBox(width: 20,),
                     Column(
                       children: [

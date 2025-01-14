@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:pie/pages/bottomnav.dart';
 import 'package:pie/pages/home.dart';
 import 'package:pie/pages/login.dart';
+import 'package:pie/pages/onboard.dart';
 import 'package:pie/pages/profile.dart';
+import 'package:pie/pages/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Login()
+      home: Onboard()
     );
   }
 }

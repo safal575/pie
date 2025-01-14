@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:pie/pages/signup.dart';
+import 'package:pie/pages/login.dart';
 import 'package:pie/widget/widget_support.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Signup extends StatefulWidget {
+  const Signup({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,13 +54,19 @@ class _LoginState extends State<Login> {
                     elevation: 5,
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
-
+                    
                       width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height/2.5,
+                      height: MediaQuery.of(context).size.height/2,
                       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
                         child: Column(
                           children: [
-                            Text("Login", style: AppWidget.HeadLineTextFieldStyle(),),
+                            Text("Sign Up", style: AppWidget.HeadLineTextFieldStyle(),),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            TextField(
+                              decoration: InputDecoration(hintText: 'Name', hintStyle: AppWidget.boldTextFieldStyle(), prefixIcon: Icon(Icons.person_outlined)),
+                            ),
                             SizedBox(
                               height: 20,
                             ),
@@ -72,12 +78,8 @@ class _LoginState extends State<Login> {
                               obscureText: true,
                               decoration: InputDecoration(hintText: 'Password', hintStyle: AppWidget.LightTextFieldStyle(), prefixIcon: Icon(Icons.password_outlined)),
                             ),
-                            SizedBox(height: 10,),
-                            Container(
-                              alignment: Alignment.topRight,
-                              child: Text("Forgot password?", style: AppWidget.LightTextFieldStyle(),)
-                            ),
-                            SizedBox(height: 20,),
+                            
+                            SizedBox(height: 50,),
                             Material(
                               elevation: 5,
                               borderRadius: BorderRadius.circular(10),
@@ -85,7 +87,7 @@ class _LoginState extends State<Login> {
                                 padding: EdgeInsets.symmetric(vertical: 8),
                                 width: 200,
                                 decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(10)),
-                                child: Center(child: Text("LOGIN", style: TextStyle(color: Colors.white, fontSize: 10, fontFamily: 'Poppins', fontWeight: FontWeight.bold)),),
+                                child: Center(child: Text("Sign Up", style: TextStyle(color: Colors.white, fontSize: 10, fontFamily: 'Poppins', fontWeight: FontWeight.bold)),),
                               ),
                             ),
                            
@@ -96,10 +98,10 @@ class _LoginState extends State<Login> {
                   SizedBox(height: 20,),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Signup()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
                     },
-                    child: Text(" Don't have an account? Sign up", style: AppWidget.LightTextFieldStyle()),
-                  ),
+                    child: Text(" Already have an account? Login", style: AppWidget.LightTextFieldStyle()),
+                  )
                 ],
               ),
             )
